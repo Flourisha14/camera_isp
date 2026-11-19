@@ -1,0 +1,70 @@
+# ============================================================
+# Rove Tech Camera ISP Assignment
+# Generated files and local environment exclusions
+# ============================================================
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Meson / Ninja
+build/
+builddir/
+meson-logs/
+meson-private/
+compile_commands.json
+
+# Yocto / BitBake
+tmp/
+sstate-cache/
+downloads/
+cache/
+bitbake-cookerdaemon.log
+*.lock
+
+# Yocto generated images
+*.wic
+*.wic.gz
+*.wic.bz2
+*.wic.xz
+*.ext4
+*.rootfs.*
+*.sdimg
+*.qemuboot.conf
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# VMware / Virtual Machines
+*.vmdk
+*.vmx
+*.nvram
+*.vmsd
+*.vmsn
+*.vmem
+*.vmss
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa
+id_ed25519
+id_ed25519_*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Local evidence containing machine-specific information
+devops/evidence/raw/

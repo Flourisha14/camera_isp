@@ -49,7 +49,7 @@ echo "PASS: Repository structure"
 echo
 echo "[2/5] Checking Git whitespace..."
 
-git diff --check HEAD^
+git diff --check "$(git hash-object -t tree /dev/null)" HEAD
 
 echo "PASS: Whitespace validation"
 

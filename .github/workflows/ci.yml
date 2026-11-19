@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - "devops/**"
+      - "yocto/**"
+      - "app/**"
+      - "fix/**"
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-validation:
+    name: Repository Validation
+
+    runs-on: ubuntu-24.04
+
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Display environment
+        run: |
+          echo "Runner OS: $RUNNER_OS"
+          git --version
+          python3 --version
+          bash --version
+
+      - name: Validate repository
+        run: |
+          bash devops/scripts/validate-repository.sh

@@ -1,0 +1,39 @@
+header:
+  version: 14
+
+machine: qemux86-64
+
+distro: poky
+
+target: core-image-minimal
+
+repos:
+  poky:
+    url: https://git.yoctoproject.org/poky
+    branch: scarthgap
+    commit: 6b7c1066f778db5a6b3e35400617b10342988fa8
+    layers:
+      meta:
+      meta-poky:
+
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    branch: scarthgap
+    commit: 2db6aece32c7f8ebf6015b468e1b4e21de072e3b
+    layers:
+      meta-oe:
+      meta-multimedia:
+      meta-python:
+      meta-networking:
+
+  camera-isp:
+    layers:
+      meta-isp-assignment:
+
+local_conf_header:
+  resource_limits: |
+    BB_NUMBER_THREADS = "2"
+    PARALLEL_MAKE = "-j 2"
+
+  build_configuration: |
+    PACKAGE_CLASSES = "package_ipk"

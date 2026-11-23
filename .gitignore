@@ -68,3 +68,7 @@ id_ed25519_*
 
 # Local evidence containing machine-specific information
 devops/evidence/raw/
+
+# Yocto upstream source checkouts
+/poky/
+/meta-openembedded/
